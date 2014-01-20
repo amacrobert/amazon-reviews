@@ -1,5 +1,6 @@
 <?php
 
+// TODO: get URL from POST
 $product_url = 'http://www.amazon.com/dp/B00ATL6OOG';
 //$product_url = 'http://www.amazon.com/Huy-Fong-Sriracha-Chili-Sauce/dp/B00BT7C9R0';
 //$product_url = 'http://www.amazon.com/dp/B008AV5HLS';
