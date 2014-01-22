@@ -10,7 +10,7 @@
  *     Example: http://www.amazon.com/dp/B00ATL6OOG
  */
 
-if (empty($_POST['product_url'])) {
+if (empty($_POST['amazon_url'])) {
   exit(json_encode(array(
     'code' => 0,
     'message' => 'amazon_url not specified in POST body',
