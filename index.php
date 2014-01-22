@@ -6,7 +6,8 @@
  * Parameters:
  *   name: amazon_url
  *   value: string
- *   desc: a link to the main product page of an Amazon product. Ex: http://www.amazon.com/dp/B00ATL6OOG
+ *   description: a link to the main product page of an Amazon product.
+ *     Example: http://www.amazon.com/dp/B00ATL6OOG
  */
 
 if (empty($_POST['product_url'])) {
@@ -55,14 +56,17 @@ function amazon_reviews($product_url) {
   $reviews_list = array();
   $reviews_dom = @DOMDocument::loadHTMLFile($all_reviews_url);
 
-  //echo get_reviews_from_dom($reviews_dom, $reviews_list);
   // Step through each page of reviews, collecting 5-star reviews
   $reviews_list = array();
   while (($next_page_url = get_reviews_from_dom($reviews_dom, $reviews_list)) !== FALSE) {
     $reviews_dom = @DOMDocument::loadHTMLFile($next_page_url);
   }
   
-  return json_encode($reviews_list);
+  return json_encode(array(
+    'code' => 200,
+    'message' => 'Success',
+    'reviews' => $reviews_list
+  ));
 }
 
 /**
