@@ -53,7 +53,6 @@ function amazon_reviews($product_url) {
 
   // Load the first page of reviews using the "See all X reviews" link
   $all_reviews_url = $all_reviews_dom->item(0)->getAttribute('href');
-  $reviews_list = array();
   $reviews_dom = @DOMDocument::loadHTMLFile($all_reviews_url);
 
   // Step through each page of reviews, collecting 5-star reviews
