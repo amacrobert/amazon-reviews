@@ -20,7 +20,7 @@ else {
   $product_url = $_POST['amazon_url'];
 }
 
-echo amazon_reviews($product_url);
+print amazon_reviews($product_url);
 
 /**
  * Finds all 5-star reviews for an Amazon product given the product's URL
@@ -113,3 +113,4 @@ function get_reviews_from_dom($dom, &$reviews_list) {
 
   return $next_page_url;
 }
+
